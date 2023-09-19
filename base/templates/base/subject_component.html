@@ -1,0 +1,10 @@
+<h2>Browse Content</h5>
+    <hr>
+        <div>
+            <a href="/">All</a>
+        </div>
+    {%for subject in subjects%}
+        <div>
+            <a href="?q={{subject.name}}">{{subject.name}}</a>
+        </div>
+    {%endfor%}

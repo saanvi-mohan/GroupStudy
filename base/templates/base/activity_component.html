@@ -1,0 +1,11 @@
+<h3>Recent Activity</h3>
+    <hr>
+    {%for comment in comments%}
+        <div>
+            <p>@<a href="/profile/{{comment.user.id}}">{{comment.user}}</a> -- posted {{comment.created|timesince}} ago</p>
+            <small>replied to a post in "{{comment.room}}"</small>
+
+            <p>{{comment}}</p>
+            <hr>
+        </div>
+    {%endfor%}
