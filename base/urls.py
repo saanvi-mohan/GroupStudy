@@ -13,4 +13,6 @@ urlpatterns = [
     path('register/',views.registerUser),
     path('delete-message/<str:pk>',views.deleteMessage),
     path('profile/<str:pk>',views.Profile),
+    path('browse-topic/',views.browseTopic),
+    path('activity/',views.activity)
 ]

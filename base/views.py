@@ -174,3 +174,15 @@ def editUser(request):
             form.save()
             return redirect('/profile/'+ str(user.id))
     return render(request,'base/edit-user.html',{"form" : form})
+
+def browseTopic(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    subjects = Subject.objects.filter(name__icontains = q)
+    totalrooms = Room.objects.all().count
+    context = {"subjects" : subjects,"totalrooms" : totalrooms}
+    return render(request,'base/topics.html',context)
+
+def activity(request):
+    comments = Message.objects.all()
+    context = {"comments" : comments}
+    return render(request,'base/activity.html',context)
